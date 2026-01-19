@@ -97,7 +97,7 @@ def create_board_view(
                 offset=ft.Offset(0, 4),
             ),
             content=crown,
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
         )
     
     def create_square(row: int, col: int) -> ft.Container:
@@ -152,7 +152,7 @@ def create_board_view(
             bgcolor=bg_color,
             border=border,
             content=content,
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             on_click=lambda e, r=row, c=col: handle_click(r, c),
         )
     

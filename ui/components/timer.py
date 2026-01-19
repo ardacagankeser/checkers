@@ -105,7 +105,7 @@ def create_timer_display(
         border=ft.border.all(2, border_color),
         border_radius=SIZES["radius_md"],
         padding=ft.padding.symmetric(horizontal=SIZES["spacing_md"], vertical=SIZES["spacing_sm"]),
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
     )
     
     return timer_container

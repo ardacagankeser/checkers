@@ -91,7 +91,7 @@ def create_menu_screen(
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=SIZES["spacing_xs"],
         ),
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         padding=SIZES["spacing_xl"],
     )
     
@@ -130,7 +130,7 @@ def create_menu_screen(
                 COLORS["primary"] if is_selected else COLORS["glass_border"],
             ),
             border_radius=SIZES["radius_md"],
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             on_click=on_click,
         )
     
@@ -180,7 +180,7 @@ def create_menu_screen(
                 COLORS["primary"] if is_selected else COLORS["glass_border"],
             ),
             border_radius=SIZES["radius_sm"],
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             on_click=on_click,
         )
     
@@ -233,7 +233,7 @@ def create_menu_screen(
                 COLORS["primary"] if is_selected else COLORS["glass_border"],
             ),
             border_radius=SIZES["radius_sm"],
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             on_click=on_click,
         )
     
@@ -295,7 +295,7 @@ def create_menu_screen(
                 COLORS["primary"] if is_selected else COLORS["glass_border"],
             ),
             border_radius=SIZES["radius_sm"],
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             on_click=on_click,
         )
     
@@ -335,7 +335,7 @@ def create_menu_screen(
         height=56,
         bgcolor=COLORS["accent_green"],
         border_radius=SIZES["radius_lg"],
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         on_click=lambda e: handle_start(),
         shadow=ft.BoxShadow(
             spread_radius=0,

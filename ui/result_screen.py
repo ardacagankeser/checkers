@@ -139,7 +139,7 @@ def create_result_screen(
         height=SIZES["button_height"],
         bgcolor=COLORS["primary"],
         border_radius=SIZES["radius_md"],
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         on_click=lambda e: on_return_to_menu() if on_return_to_menu else None,
         margin=ft.margin.only(top=SIZES["spacing_xl"]),
     )
@@ -156,7 +156,7 @@ def create_result_screen(
         height=SIZES["button_height"],
         bgcolor=COLORS["accent_green"],
         border_radius=SIZES["radius_md"],
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         on_click=lambda e: on_return_to_menu() if on_return_to_menu else None,
         margin=ft.margin.only(top=SIZES["spacing_md"]),
         shadow=ft.BoxShadow(
@@ -184,7 +184,7 @@ def create_result_screen(
         bgcolor=COLORS["bg_dark"],
         padding=SIZES["spacing_xl"],
         expand=True,
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
     )
     
     return result_container

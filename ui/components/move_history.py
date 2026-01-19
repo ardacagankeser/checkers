@@ -118,7 +118,7 @@ def create_move_history(
                 color=COLORS["text_muted"],
                 italic=True,
             ),
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment(0, 0),
             padding=SIZES["spacing_md"],
         )
         move_rows = [empty_message]
