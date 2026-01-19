@@ -26,7 +26,7 @@
 | **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [x] |
 | **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [x] |
 | **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [x] |
-| **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [ ] |
+| **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [x] |
 
 ---
 
@@ -973,7 +973,7 @@ Allow player to forfeit game with confirmation.
 
 ## TASK-FEAT-005: Implement Timer Logic
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 1.5 hours
 
@@ -983,12 +983,12 @@ Implement countdown timer for timed games.
 ### Scope
 
 #### In Scope
-- [ ] Start timer on game start (if timed)
-- [ ] Decrement active player's time each second
-- [ ] Switch timer on turn change
-- [ ] Detect time expiry → game over
-- [ ] Hide timers for untimed games
-- [ ] Update TimerDisplay components
+- [x] Start timer on game start (if timed)
+- [x] Decrement active player's time each second
+- [x] Switch timer on turn change
+- [x] Detect time expiry → game over
+- [x] Hide timers for untimed games
+- [x] Update TimerDisplay components
 
 #### Out of Scope
 - Increment/delay modes
@@ -1004,20 +1004,20 @@ Implement countdown timer for timed games.
 ### Expected Output
 
 #### Deliverables
-- [ ] Modified `ui/game_screen.py`
+- [x] Modified `ui/game_screen.py`
 
 #### Acceptance Criteria
-- [ ] Timers count down
-- [ ] Active timer highlighted
-- [ ] Time expiry ends game
-- [ ] Untimed games hide timers
+- [x] Timers count down
+- [x] Active timer highlighted
+- [x] Time expiry ends game
+- [x] Untimed games hide timers
 
 ### Dependencies
 - Requires: TASK-FEAT-001, TASK-UI-003
 
 ### Verification
-- [ ] Start timed game, verify countdown
-- [ ] Let time expire, verify game over
+- [x] Start timed game, verify countdown
+- [x] Let time expire, verify game over
 
 ---
 

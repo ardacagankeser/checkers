@@ -6,6 +6,7 @@ against AI or locally with another player.
 """
 
 import flet as ft
+import asyncio
 from typing import Optional
 
 from game.types import GameSettings, Player
@@ -28,6 +29,7 @@ class DamaApp:
         self.page = page
         self.game_state: Optional[GameState] = None
         self.current_settings: Optional[GameSettings] = None
+        self.timer_running: bool = False
         
         # Configure page
         self._configure_page()
@@ -49,6 +51,7 @@ class DamaApp:
     
     def show_menu(self):
         """Navigate to the menu screen."""
+        self._stop_timer()
         self.page.controls.clear()
         
         menu = create_menu_screen(
@@ -75,9 +78,15 @@ class DamaApp:
         
         self.page.add(game_screen)
         self.page.update()
+        
+        # Start timer if timed game
+        if self.current_settings and self.current_settings.time_limit:
+            self._start_timer()
     
     def show_result(self):
         """Navigate to the result screen."""
+        self._stop_timer()
+        
         if not self.game_state:
             self.show_menu()
             return
@@ -145,6 +154,51 @@ class DamaApp:
         self.game_state = None
         self.current_settings = None
         self.show_menu()
+    
+    def _start_timer(self):
+        """Start the game timer."""
+        if not self.timer_running:
+            self.timer_running = True
+            self.page.run_task(self._timer_tick)
+    
+    def _stop_timer(self):
+        """Stop the game timer."""
+        self.timer_running = False
+    
+    async def _timer_tick(self):
+        """Timer tick coroutine - decrements active player's time."""
+        while self.timer_running:
+            await asyncio.sleep(1)
+            
+            if not self.timer_running:
+                break
+            
+            if not self.game_state or not self.game_state.board:
+                break
+            
+            if self.game_state.is_game_over():
+                self._stop_timer()
+                break
+            
+            # Update timer for current player
+            current_player = self.game_state.board.current_player
+            self.game_state.update_timer(current_player, 1)
+            
+            # Check for time expiry
+            if self.game_state.is_time_expired(current_player):
+                # Time expired - opponent wins
+                winner = (
+                    Player.BLACK if current_player == Player.WHITE 
+                    else Player.WHITE
+                )
+                self.game_state.board.game_over = True
+                self.game_state.board.winner = winner
+                self._stop_timer()
+                self.show_result()
+                break
+            
+            # Refresh game screen to update timer display
+            self.show_game()
 
 
 def main(page: ft.Page):
