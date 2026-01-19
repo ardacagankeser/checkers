@@ -24,7 +24,7 @@
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [x] |
 | **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [x] |
 | **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [x] |
-| **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [ ] |
+| **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [x] |
 | **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [ ] |
 | **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [ ] |
 
@@ -877,7 +877,7 @@ Integrate AI move calculation into game screen for AI mode.
 
 ## TASK-FEAT-003: Implement Undo Feature
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 1 hour
 
@@ -887,12 +887,12 @@ Wire undo button to restore previous game state.
 ### Scope
 
 #### In Scope
-- [ ] Wire Undo button in game screen
-- [ ] AI Mode: Undo last 2 moves (player + AI)
-- [ ] Local Mode: Undo last 1 move
-- [ ] Update board display
-- [ ] Update move history
-- [ ] Disable when no moves to undo
+- [x] Wire Undo button in game screen
+- [x] AI Mode: Undo last 2 moves (player + AI)
+- [x] Local Mode: Undo last 1 move
+- [x] Update board display
+- [x] Update move history
+- [x] Disable when no moves to undo
 
 #### Out of Scope
 - Redo functionality
@@ -908,19 +908,19 @@ Wire undo button to restore previous game state.
 ### Expected Output
 
 #### Deliverables
-- [ ] Modified `ui/game_screen.py`
-- [ ] Modified `game/state.py` (if needed)
+- [x] Modified `ui/game_screen.py`
+- [x] Modified `game/state.py` (if needed)
 
 #### Acceptance Criteria
-- [ ] Undo restores board state
-- [ ] History updates correctly
-- [ ] Button disabled appropriately
+- [x] Undo restores board state
+- [x] History updates correctly
+- [x] Button disabled appropriately
 
 ### Dependencies
 - Requires: TASK-FEAT-001
 
 ### Verification
-- [ ] Make moves, undo, verify state
+- [x] Make moves, undo, verify state
 
 ---
 
