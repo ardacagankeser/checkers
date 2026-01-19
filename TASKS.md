@@ -18,7 +18,7 @@
 | **3. UI Foundation** | TASK-UI-002 | Create Board Component | [x] |
 | **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [x] |
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [x] |
-| **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [ ] |
+| **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [x] |
 | **4. Screens** | TASK-UI-006 | Implement Menu Screen | [ ] |
 | **4. Screens** | TASK-UI-007 | Implement Game Screen | [ ] |
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [ ] |
@@ -547,7 +547,7 @@ Create scrollable move history list component.
 
 ## TASK-UI-005: Create Captured Pieces Component
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Low  
 **Estimated Effort:** 30 minutes
 
@@ -557,11 +557,11 @@ Create component showing captured pieces for each player.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/components/captured.py`
-- [ ] Create `CapturedPieces` class/function
-- [ ] Accept captured count per player
-- [ ] Display mini piece icons
-- [ ] Label for each player
+- [x] Create `ui/components/captured.py`
+- [x] Create `CapturedPieces` class/function
+- [x] Accept captured count per player
+- [x] Display mini piece icons
+- [x] Label for each player
 
 #### Out of Scope
 - Captured piece animation
@@ -577,17 +577,17 @@ Create component showing captured pieces for each player.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/components/captured.py`
+- [x] `ui/components/captured.py`
 
 #### Acceptance Criteria
-- [ ] Shows captured count
-- [ ] Mini piece visuals
+- [x] Shows captured count
+- [x] Mini piece visuals
 
 ### Dependencies
 - Requires: TASK-UI-001
 
 ### Verification
-- [ ] Visual: Captured pieces display
+- [x] Visual: Captured pieces display
 
 ---
 
