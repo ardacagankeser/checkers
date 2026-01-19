@@ -10,7 +10,7 @@
 | Phase | Task ID | Title | Status |
 |-------|---------|-------|--------|
 | **1. Setup** | TASK-SETUP-001 | Project Structure & Dependencies | [x] |
-| **2. Game Logic** | TASK-GAME-001 | Create Type Definitions | [ ] |
+| **2. Game Logic** | TASK-GAME-001 | Create Type Definitions | [x] |
 | **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [ ] |
 | **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [ ] |
 | **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [ ] |
@@ -94,7 +94,7 @@ Create project folder structure and install Flet dependency.
 
 ## TASK-GAME-001: Create Type Definitions
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 30 minutes
 
@@ -104,15 +104,15 @@ Create shared type definitions, enums, and dataclasses for the game.
 ### Scope
 
 #### In Scope
-- [ ] Create `game/types.py`
-- [ ] Define `PieceType` enum (MAN, KING)
-- [ ] Define `Player` enum (WHITE, BLACK)
-- [ ] Define `Difficulty` enum (EASY, MEDIUM, HARD, GRANDMASTER)
-- [ ] Define `GameMode` enum (AI, LOCAL)
-- [ ] Define `Piece` dataclass
-- [ ] Define `Move` dataclass
-- [ ] Define `GameSettings` dataclass
-- [ ] Define `MoveRecord` dataclass (for history)
+- [x] Create `game/types.py`
+- [x] Define `PieceType` enum (MAN, KING)
+- [x] Define `Player` enum (WHITE, BLACK)
+- [x] Define `Difficulty` enum (EASY, MEDIUM, HARD, GRANDMASTER)
+- [x] Define `GameMode` enum (AI, LOCAL)
+- [x] Define `Piece` dataclass
+- [x] Define `Move` dataclass
+- [x] Define `GameSettings` dataclass
+- [x] Define `MoveRecord` dataclass (for history)
 
 #### Out of Scope
 - Game logic implementation
@@ -131,19 +131,19 @@ Create shared type definitions, enums, and dataclasses for the game.
 ### Expected Output
 
 #### Deliverables
-- [ ] `game/types.py`
+- [x] `game/types.py`
 
 #### Acceptance Criteria
-- [ ] All enums use DOMAIN.md terminology
-- [ ] Type hints on all fields
-- [ ] No external dependencies except `typing`, `dataclasses`, `enum`
-- [ ] File passes `python -m py_compile game/types.py`
+- [x] All enums use DOMAIN.md terminology
+- [x] Type hints on all fields
+- [x] No external dependencies except `typing`, `dataclasses`, `enum`
+- [x] File passes `python -m py_compile game/types.py`
 
 ### Dependencies
 - Requires: TASK-SETUP-001
 
 ### Verification
-- [ ] `python -c "from game.types import *"`
+- [x] `python -c "from game.types import *"`
 
 ---
 
