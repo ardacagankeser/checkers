@@ -25,7 +25,7 @@
 | **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [x] |
 | **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [x] |
 | **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [x] |
-| **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [ ] |
+| **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [x] |
 | **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [ ] |
 
 ---
@@ -926,7 +926,7 @@ Wire undo button to restore previous game state.
 
 ## TASK-FEAT-004: Implement Forfeit Feature
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 45 minutes
 
@@ -936,11 +936,11 @@ Allow player to forfeit game with confirmation.
 ### Scope
 
 #### In Scope
-- [ ] Wire Forfeit button in game screen
-- [ ] Show confirmation dialog
-- [ ] On confirm: Set opponent as winner
-- [ ] Navigate to result screen
-- [ ] On cancel: Resume game
+- [x] Wire Forfeit button in game screen
+- [x] Show confirmation dialog
+- [x] On confirm: Set opponent as winner
+- [x] Navigate to result screen
+- [x] On cancel: Resume game
 
 #### Out of Scope
 - Draw offers
@@ -956,18 +956,18 @@ Allow player to forfeit game with confirmation.
 ### Expected Output
 
 #### Deliverables
-- [ ] Modified `ui/game_screen.py`
+- [x] Modified `ui/game_screen.py`
 
 #### Acceptance Criteria
-- [ ] Confirmation dialog appears
-- [ ] Forfeit ends game correctly
-- [ ] Cancel resumes game
+- [x] Confirmation dialog appears
+- [x] Forfeit ends game correctly
+- [x] Cancel resumes game
 
 ### Dependencies
 - Requires: TASK-FEAT-001
 
 ### Verification
-- [ ] Click forfeit, confirm, verify result
+- [x] Click forfeit, confirm, verify result
 
 ---
 
