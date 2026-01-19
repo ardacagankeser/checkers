@@ -1,0 +1,1024 @@
+# TASKS.md - Project Task Registry
+
+> All tasks follow TASK_TEMPLATE.md format.  
+> Governed by RULES.md, ARCHITECTURE.md, DOMAIN.md, STYLEGUIDE.md.
+
+---
+
+## Task Index
+
+| Phase | Task ID | Title | Status |
+|-------|---------|-------|--------|
+| **1. Setup** | TASK-SETUP-001 | Project Structure & Dependencies | [ ] |
+| **2. Game Logic** | TASK-GAME-001 | Create Type Definitions | [ ] |
+| **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [ ] |
+| **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [ ] |
+| **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [ ] |
+| **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [ ] |
+| **3. UI Foundation** | TASK-UI-002 | Create Board Component | [ ] |
+| **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [ ] |
+| **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [ ] |
+| **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [ ] |
+| **4. Screens** | TASK-UI-006 | Implement Menu Screen | [ ] |
+| **4. Screens** | TASK-UI-007 | Implement Game Screen | [ ] |
+| **4. Screens** | TASK-UI-008 | Implement Result Screen | [ ] |
+| **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [ ] |
+| **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [ ] |
+| **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [ ] |
+| **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [ ] |
+| **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [ ] |
+
+---
+
+# Phase 1: Project Setup
+
+---
+
+## TASK-SETUP-001: Project Structure & Dependencies
+
+**Status:** [ ] Not Started  
+**Priority:** Critical  
+**Estimated Effort:** 30 minutes
+
+### Goal
+Create project folder structure and install Flet dependency.
+
+### Scope
+
+#### In Scope
+- [ ] Create `requirements.txt` with `flet>=0.21.0`
+- [ ] Create folder: `game/`
+- [ ] Create folder: `ui/`
+- [ ] Create folder: `ui/components/`
+- [ ] Create `game/__init__.py`
+- [ ] Create `ui/__init__.py`
+- [ ] Create `ui/components/__init__.py`
+- [ ] Create placeholder `main.py`
+
+#### Out of Scope
+- Any game logic
+- Any UI implementation
+- Theme or styling
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement any functionality
+- Do not modify `dama.py`
+- Do not add extra dependencies
+
+### Expected Output
+
+#### Deliverables
+- [ ] `requirements.txt`
+- [ ] `main.py` (placeholder with `pass`)
+- [ ] `game/__init__.py`
+- [ ] `ui/__init__.py`
+- [ ] `ui/components/__init__.py`
+
+#### Acceptance Criteria
+- [ ] `pip install -r requirements.txt` succeeds
+- [ ] `python main.py` runs without error
+- [ ] Folder structure matches STYLEGUIDE.md
+
+### Verification
+- [ ] Run: `pip install -r requirements.txt`
+- [ ] Run: `python main.py` (exits cleanly)
+
+---
+
+# Phase 2: Game Logic
+
+---
+
+## TASK-GAME-001: Create Type Definitions
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 30 minutes
+
+### Goal
+Create shared type definitions, enums, and dataclasses for the game.
+
+### Scope
+
+#### In Scope
+- [ ] Create `game/types.py`
+- [ ] Define `PieceType` enum (MAN, KING)
+- [ ] Define `Player` enum (WHITE, BLACK)
+- [ ] Define `Difficulty` enum (EASY, MEDIUM, HARD, GRANDMASTER)
+- [ ] Define `GameMode` enum (AI, LOCAL)
+- [ ] Define `Piece` dataclass
+- [ ] Define `Move` dataclass
+- [ ] Define `GameSettings` dataclass
+- [ ] Define `MoveRecord` dataclass (for history)
+
+#### Out of Scope
+- Game logic implementation
+- AI implementation
+- Board class
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not copy any logic from `dama.py`
+- Do not add UI-related code
+- Do not add Flet imports
+- Do not create classes with behavior (only data)
+
+### Expected Output
+
+#### Deliverables
+- [ ] `game/types.py`
+
+#### Acceptance Criteria
+- [ ] All enums use DOMAIN.md terminology
+- [ ] Type hints on all fields
+- [ ] No external dependencies except `typing`, `dataclasses`, `enum`
+- [ ] File passes `python -m py_compile game/types.py`
+
+### Dependencies
+- Requires: TASK-SETUP-001
+
+### Verification
+- [ ] `python -c "from game.types import *"`
+
+---
+
+## TASK-GAME-002: Port TurkishDraughts Class
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 2 hours
+
+### Goal
+Extract and refactor `TurkishDraughts` class from `dama.py`, removing all Pygame dependencies.
+
+### Scope
+
+#### In Scope
+- [ ] Create `game/board.py`
+- [ ] Port `TurkishDraughts` class from `dama.py`
+- [ ] Remove all Pygame imports and references
+- [ ] Remove animation-related variables and methods
+- [ ] Use types from `game/types.py`
+- [ ] Preserve all game rule logic:
+  - Board setup
+  - Move validation
+  - Capture detection (mandatory, chain)
+  - Promotion logic
+  - Game over detection
+- [ ] Add type hints
+
+#### Out of Scope
+- AI logic (separate task)
+- UI rendering
+- State management beyond board state
+- Timer logic
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not modify Turkish Draughts rules
+- Do not import Pygame
+- Do not import Flet
+- Do not add new game features
+- Do not change move validation logic
+
+### Expected Output
+
+#### Deliverables
+- [ ] `game/board.py`
+
+#### Acceptance Criteria
+- [ ] Class is pure Python (no external deps)
+- [ ] All methods have type hints
+- [ ] `setup_board()` places pieces correctly
+- [ ] `get_valid_moves_for_piece()` works
+- [ ] `make_move()` executes moves properly
+- [ ] `check_game_over()` detects end conditions
+- [ ] Original `dama.py` unchanged
+
+### Dependencies
+- Requires: TASK-GAME-001
+
+### Verification
+- [ ] `python -c "from game.board import TurkishDraughts; g = TurkishDraughts()"`
+- [ ] Manual: Create board, make moves, verify rules
+
+---
+
+## TASK-GAME-003: Port TurkishDraughtsAI Class
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 1 hour
+
+### Goal
+Extract `TurkishDraughtsAI` class from `dama.py` as standalone module.
+
+### Scope
+
+#### In Scope
+- [ ] Create `game/ai.py`
+- [ ] Port `TurkishDraughtsAI` class from `dama.py`
+- [ ] Use types from `game/types.py`
+- [ ] Use `TurkishDraughts` from `game/board.py`
+- [ ] Preserve minimax with alpha-beta pruning
+- [ ] Preserve position evaluation logic
+- [ ] Support all Difficulty levels
+- [ ] Add type hints
+
+#### Out of Scope
+- New AI strategies
+- Performance optimizations
+- UI integration
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not modify AI algorithm logic
+- Do not change evaluation function
+- Do not import Pygame or Flet
+- Do not add new difficulty levels
+
+### Expected Output
+
+#### Deliverables
+- [ ] `game/ai.py`
+
+#### Acceptance Criteria
+- [ ] Class uses `game/types.py` types
+- [ ] `get_best_move()` returns valid Move
+- [ ] Different Difficulty levels have different depths
+- [ ] No Pygame references
+- [ ] Original `dama.py` unchanged
+
+### Dependencies
+- Requires: TASK-GAME-001, TASK-GAME-002
+
+### Verification
+- [ ] `python -c "from game.ai import TurkishDraughtsAI"`
+- [ ] Manual: AI returns moves in test scenarios
+
+---
+
+## TASK-GAME-004: Implement GameState Manager
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 1.5 hours
+
+### Goal
+Create centralized game state manager for coordinating game flow.
+
+### Scope
+
+#### In Scope
+- [ ] Create `game/state.py`
+- [ ] Define `GameState` class with:
+  - Current settings (`GameSettings`)
+  - Board instance (`TurkishDraughts`)
+  - AI instance (optional)
+  - Move history list (`MoveRecord`)
+  - Timer values (white_time, black_time)
+  - Undo stack (board snapshots)
+- [ ] Methods:
+  - `new_game(settings)` - Initialize game
+  - `execute_move(move)` - Make move, update history
+  - `undo()` - Revert last move(s)
+  - `get_move_history()` - Return history list
+  - `save_snapshot()` - For undo support
+  - `is_game_over()` - Check end condition
+  - `get_winner()` - Return winner if game over
+
+#### Out of Scope
+- Timer countdown logic (UI responsibility)
+- AI move selection (called externally)
+- Persistence/save games
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement timer countdown
+- Do not import Flet
+- Do not add networking or persistence
+- Do not modify board/AI classes
+
+### Expected Output
+
+#### Deliverables
+- [ ] `game/state.py`
+
+#### Acceptance Criteria
+- [ ] State tracks all game data
+- [ ] Undo restores previous board state
+- [ ] Move history is maintained
+- [ ] Type hints on all methods
+
+### Dependencies
+- Requires: TASK-GAME-001, TASK-GAME-002, TASK-GAME-003
+
+### Verification
+- [ ] `python -c "from game.state import GameState"`
+- [ ] Manual: Create game, make moves, undo, verify state
+
+---
+
+# Phase 3: UI Foundation
+
+---
+
+## TASK-UI-001: Create Theme Constants
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 30 minutes
+
+### Goal
+Define color palette and styling constants inspired by HTML mockups.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/theme.py`
+- [ ] Define `COLORS` dictionary with:
+  - primary, primary_dark
+  - bg_dark, surface, surface_light
+  - text_white, text_gray
+  - accent_green, accent_amber
+  - board_light (maple), board_dark (walnut)
+  - piece_white, piece_black
+- [ ] Define `FONTS` dictionary (optional names)
+- [ ] Define `SIZES` dictionary (board, pieces, spacing)
+
+#### Out of Scope
+- UI components
+- Flet widgets
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not create UI components
+- Do not import Flet in this file
+- Do not add themes beyond dark mode
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/theme.py`
+
+#### Acceptance Criteria
+- [ ] All colors from mockups defined
+- [ ] Values are hex strings
+- [ ] No Flet imports
+
+### Dependencies
+- Requires: TASK-SETUP-001
+
+### Verification
+- [ ] `python -c "from ui.theme import COLORS"`
+
+---
+
+## TASK-UI-002: Create Board Component
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 2 hours
+
+### Goal
+Create reusable 8x8 board widget with piece rendering and interaction.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/components/board_view.py`
+- [ ] Create `BoardView` class (Flet UserControl or function)
+- [ ] Render 8x8 grid with alternating colors
+- [ ] Render pieces at positions (Man and King)
+- [ ] Handle square click events
+- [ ] Highlight selected piece
+- [ ] Show valid move indicators
+- [ ] Show capture targets (red highlight)
+- [ ] Use theme colors from `ui/theme.py`
+
+#### Out of Scope
+- Move execution logic (callback only)
+- Timer display
+- Move history
+- Coordinates display (A-H, 1-8)
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement game logic
+- Do not manage state
+- Do not add animations
+- Do not add coordinates yet
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/components/board_view.py`
+
+#### Acceptance Criteria
+- [ ] Renders 8x8 board
+- [ ] Pieces display correctly
+- [ ] King pieces show crown indicator
+- [ ] Click callback fires with (row, col)
+- [ ] Selected piece highlighted
+- [ ] Valid moves shown
+
+### Dependencies
+- Requires: TASK-UI-001, TASK-GAME-001
+
+### Verification
+- [ ] Visual: Board renders in test app
+- [ ] Click squares, verify callback
+
+---
+
+## TASK-UI-003: Create Timer Component
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 1 hour
+
+### Goal
+Create countdown timer display component.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/components/timer.py`
+- [ ] Create `TimerDisplay` class/function
+- [ ] Display time in MM:SS format
+- [ ] Accept time value in seconds
+- [ ] Visual styling (active/inactive state)
+- [ ] Low time warning (optional color change)
+
+#### Out of Scope
+- Countdown logic (parent manages tick)
+- Sound effects
+- Time controls selection
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement countdown interval
+- Do not manage game state
+- Do not add sound
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/components/timer.py`
+
+#### Acceptance Criteria
+- [ ] Displays formatted time
+- [ ] Styling matches theme
+- [ ] Updates when value changes
+
+### Dependencies
+- Requires: TASK-UI-001
+
+### Verification
+- [ ] Visual: Timer displays in test
+
+---
+
+## TASK-UI-004: Create Move History Component
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 45 minutes
+
+### Goal
+Create scrollable move history list component.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/components/move_history.py`
+- [ ] Create `MoveHistory` class/function
+- [ ] Accept list of `MoveRecord`
+- [ ] Display moves in notation format
+- [ ] Show piece color indicator
+- [ ] Auto-scroll to latest move
+- [ ] Highlight capture moves
+
+#### Out of Scope
+- Move replay
+- Move selection/navigation
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement move replay
+- Do not manage state
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/components/move_history.py`
+
+#### Acceptance Criteria
+- [ ] Renders move list
+- [ ] Scrollable when long
+- [ ] Uses DOMAIN.md notation
+
+### Dependencies
+- Requires: TASK-UI-001, TASK-GAME-001
+
+### Verification
+- [ ] Visual: History displays moves
+
+---
+
+## TASK-UI-005: Create Captured Pieces Component
+
+**Status:** [ ] Not Started  
+**Priority:** Low  
+**Estimated Effort:** 30 minutes
+
+### Goal
+Create component showing captured pieces for each player.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/components/captured.py`
+- [ ] Create `CapturedPieces` class/function
+- [ ] Accept captured count per player
+- [ ] Display mini piece icons
+- [ ] Label for each player
+
+#### Out of Scope
+- Captured piece animation
+- Click interactions
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not add animations
+- Do not manage state
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/components/captured.py`
+
+#### Acceptance Criteria
+- [ ] Shows captured count
+- [ ] Mini piece visuals
+
+### Dependencies
+- Requires: TASK-UI-001
+
+### Verification
+- [ ] Visual: Captured pieces display
+
+---
+
+# Phase 4: Screens
+
+---
+
+## TASK-UI-006: Implement Menu Screen
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 2.5 hours
+
+### Goal
+Create main menu screen with game configuration options.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/menu_screen.py`
+- [ ] Title/logo display
+- [ ] Game mode selection:
+  - "Play vs AI" button
+  - "Local Match" button
+- [ ] Difficulty selector (4 levels) - shown for AI mode
+- [ ] Time control selector:
+  - Untimed
+  - 3 minutes
+  - 5 minutes
+  - 10 minutes
+- [ ] Side selection: White / Black / Random
+- [ ] "START MATCH" button
+- [ ] Return `GameSettings` on start
+- [ ] Styling per theme and mockup
+
+#### Out of Scope
+- Settings persistence
+- Custom time input
+- Player profiles
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement game logic
+- Do not persist settings
+- Do not add leaderboards
+- Do not add features not in mockup
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/menu_screen.py`
+
+#### Acceptance Criteria
+- [ ] All options functional
+- [ ] Returns valid GameSettings
+- [ ] Styling matches mockup intent
+- [ ] Mode toggle hides/shows difficulty
+
+### Dependencies
+- Requires: TASK-UI-001, TASK-GAME-001
+
+### Verification
+- [ ] Visual: Menu renders correctly
+- [ ] Functional: All selections work
+
+---
+
+## TASK-UI-007: Implement Game Screen
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 3 hours
+
+### Goal
+Create gameplay screen with board, timers, history, and controls.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/game_screen.py`
+- [ ] Layout:
+  - Header: Player info bars with timers
+  - Center: Board component
+  - Sidebar: Move history + captured pieces
+  - Footer: Undo and Forfeit buttons
+- [ ] Integrate `BoardView` component
+- [ ] Integrate `TimerDisplay` components
+- [ ] Integrate `MoveHistory` component
+- [ ] Integrate `CapturedPieces` component
+- [ ] Handle piece selection and move
+- [ ] Show "AI Thinking..." indicator
+- [ ] Turn indicator (whose turn)
+
+#### Out of Scope
+- Timer countdown interval (TASK-FEAT-005)
+- Undo logic (TASK-FEAT-003)
+- Forfeit logic (TASK-FEAT-004)
+- AI move execution (TASK-FEAT-002)
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement timer countdown
+- Do not implement undo logic
+- Do not implement forfeit logic
+- Buttons are placeholders (wired in integration tasks)
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/game_screen.py`
+
+#### Acceptance Criteria
+- [ ] Layout matches mockup structure
+- [ ] Board interactive
+- [ ] Components integrated visually
+- [ ] Placeholder button handlers
+
+### Dependencies
+- Requires: TASK-UI-002, TASK-UI-003, TASK-UI-004, TASK-UI-005, TASK-GAME-004
+
+### Verification
+- [ ] Visual: Game screen renders
+- [ ] Click board squares, selection works
+
+---
+
+## TASK-UI-008: Implement Result Screen
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 1.5 hours
+
+### Goal
+Create game over screen with winner display and statistics.
+
+### Scope
+
+#### In Scope
+- [ ] Create `ui/result_screen.py`
+- [ ] Winner announcement (large text)
+- [ ] Statistics display:
+  - Total moves
+  - Pieces captured (per player)
+  - Game duration
+- [ ] "Return to Menu" button
+- [ ] Premium styling with accents
+
+#### Out of Scope
+- Game analysis
+- Replay functionality
+- Share/export
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement replay
+- Do not add sharing
+- Do not persist results
+
+### Expected Output
+
+#### Deliverables
+- [ ] `ui/result_screen.py`
+
+#### Acceptance Criteria
+- [ ] Displays winner correctly
+- [ ] Shows statistics
+- [ ] Button navigates to menu
+
+### Dependencies
+- Requires: TASK-UI-001
+
+### Verification
+- [ ] Visual: Result screen renders with test data
+
+---
+
+# Phase 5: Integration
+
+---
+
+## TASK-FEAT-001: Main App & Screen Navigation
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 1.5 hours
+
+### Goal
+Wire up main.py with screen navigation and game flow.
+
+### Scope
+
+#### In Scope
+- [ ] Implement `main.py` as Flet app
+- [ ] Initialize with Menu screen
+- [ ] Navigate Menu → Game on start
+- [ ] Navigate Game → Result on game over
+- [ ] Navigate Result → Menu on return
+- [ ] Pass settings between screens
+- [ ] Pass game stats to result screen
+
+#### Out of Scope
+- AI integration (separate task)
+- Timer logic (separate task)
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not add splash screen
+- Do not add settings persistence
+- Do not add extra screens
+
+### Expected Output
+
+#### Deliverables
+- [ ] `main.py` (complete)
+
+#### Acceptance Criteria
+- [ ] App launches to menu
+- [ ] Full navigation flow works
+- [ ] Settings passed correctly
+
+### Dependencies
+- Requires: TASK-UI-006, TASK-UI-007, TASK-UI-008, TASK-GAME-004
+
+### Verification
+- [ ] Run app, navigate all screens
+- [ ] Complete a 2-player game manually
+
+---
+
+## TASK-FEAT-002: Connect AI to Game Loop
+
+**Status:** [ ] Not Started  
+**Priority:** High  
+**Estimated Effort:** 1 hour
+
+### Goal
+Integrate AI move calculation into game screen for AI mode.
+
+### Scope
+
+#### In Scope
+- [ ] Detect AI's turn in game screen
+- [ ] Show "AI Thinking..." indicator
+- [ ] Call `TurkishDraughtsAI.get_best_move()`
+- [ ] Execute AI move after delay (UX)
+- [ ] Update board and history
+- [ ] Handle AI difficulty from settings
+
+#### Out of Scope
+- New AI algorithms
+- AI vs AI mode
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not modify AI logic
+- Do not add AI vs AI mode
+- Do not add hint system
+
+### Expected Output
+
+#### Deliverables
+- [ ] Modified `ui/game_screen.py`
+
+#### Acceptance Criteria
+- [ ] AI makes moves in AI mode
+- [ ] Indicator shows during thinking
+- [ ] Different difficulties work
+
+### Dependencies
+- Requires: TASK-FEAT-001, TASK-GAME-003
+
+### Verification
+- [ ] Play AI mode, AI responds
+- [ ] Test all difficulty levels
+
+---
+
+## TASK-FEAT-003: Implement Undo Feature
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 1 hour
+
+### Goal
+Wire undo button to restore previous game state.
+
+### Scope
+
+#### In Scope
+- [ ] Wire Undo button in game screen
+- [ ] AI Mode: Undo last 2 moves (player + AI)
+- [ ] Local Mode: Undo last 1 move
+- [ ] Update board display
+- [ ] Update move history
+- [ ] Disable when no moves to undo
+
+#### Out of Scope
+- Redo functionality
+- Undo limit
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not implement redo
+- Do not add undo count limit
+
+### Expected Output
+
+#### Deliverables
+- [ ] Modified `ui/game_screen.py`
+- [ ] Modified `game/state.py` (if needed)
+
+#### Acceptance Criteria
+- [ ] Undo restores board state
+- [ ] History updates correctly
+- [ ] Button disabled appropriately
+
+### Dependencies
+- Requires: TASK-FEAT-001
+
+### Verification
+- [ ] Make moves, undo, verify state
+
+---
+
+## TASK-FEAT-004: Implement Forfeit Feature
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 45 minutes
+
+### Goal
+Allow player to forfeit game with confirmation.
+
+### Scope
+
+#### In Scope
+- [ ] Wire Forfeit button in game screen
+- [ ] Show confirmation dialog
+- [ ] On confirm: Set opponent as winner
+- [ ] Navigate to result screen
+- [ ] On cancel: Resume game
+
+#### Out of Scope
+- Draw offers
+- Pause game
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not add draw functionality
+- Do not add pause
+
+### Expected Output
+
+#### Deliverables
+- [ ] Modified `ui/game_screen.py`
+
+#### Acceptance Criteria
+- [ ] Confirmation dialog appears
+- [ ] Forfeit ends game correctly
+- [ ] Cancel resumes game
+
+### Dependencies
+- Requires: TASK-FEAT-001
+
+### Verification
+- [ ] Click forfeit, confirm, verify result
+
+---
+
+## TASK-FEAT-005: Implement Timer Logic
+
+**Status:** [ ] Not Started  
+**Priority:** Medium  
+**Estimated Effort:** 1.5 hours
+
+### Goal
+Implement countdown timer for timed games.
+
+### Scope
+
+#### In Scope
+- [ ] Start timer on game start (if timed)
+- [ ] Decrement active player's time each second
+- [ ] Switch timer on turn change
+- [ ] Detect time expiry → game over
+- [ ] Hide timers for untimed games
+- [ ] Update TimerDisplay components
+
+#### Out of Scope
+- Increment/delay modes
+- Time bonuses
+
+### Forbidden
+
+> ⛔ DO NOT EXCEED SCOPE
+
+- Do not add increment time
+- Do not add time bonuses
+
+### Expected Output
+
+#### Deliverables
+- [ ] Modified `ui/game_screen.py`
+
+#### Acceptance Criteria
+- [ ] Timers count down
+- [ ] Active timer highlighted
+- [ ] Time expiry ends game
+- [ ] Untimed games hide timers
+
+### Dependencies
+- Requires: TASK-FEAT-001, TASK-UI-003
+
+### Verification
+- [ ] Start timed game, verify countdown
+- [ ] Let time expire, verify game over
+
+---
+
+*Last Updated: 2026-01-19*
