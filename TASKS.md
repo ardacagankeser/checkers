@@ -17,7 +17,7 @@
 | **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [x] |
 | **3. UI Foundation** | TASK-UI-002 | Create Board Component | [x] |
 | **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [x] |
-| **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [ ] |
+| **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [x] |
 | **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [ ] |
 | **4. Screens** | TASK-UI-006 | Implement Menu Screen | [ ] |
 | **4. Screens** | TASK-UI-007 | Implement Game Screen | [ ] |
@@ -498,7 +498,7 @@ Create countdown timer display component.
 
 ## TASK-UI-004: Create Move History Component
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 45 minutes
 
@@ -508,13 +508,13 @@ Create scrollable move history list component.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/components/move_history.py`
-- [ ] Create `MoveHistory` class/function
-- [ ] Accept list of `MoveRecord`
-- [ ] Display moves in notation format
-- [ ] Show piece color indicator
-- [ ] Auto-scroll to latest move
-- [ ] Highlight capture moves
+- [x] Create `ui/components/move_history.py`
+- [x] Create `MoveHistory` class/function
+- [x] Accept list of `MoveRecord`
+- [x] Display moves in notation format
+- [x] Show piece color indicator
+- [x] Auto-scroll to latest move
+- [x] Highlight capture moves
 
 #### Out of Scope
 - Move replay
@@ -530,18 +530,18 @@ Create scrollable move history list component.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/components/move_history.py`
+- [x] `ui/components/move_history.py`
 
 #### Acceptance Criteria
-- [ ] Renders move list
-- [ ] Scrollable when long
-- [ ] Uses DOMAIN.md notation
+- [x] Renders move list
+- [x] Scrollable when long
+- [x] Uses DOMAIN.md notation
 
 ### Dependencies
 - Requires: TASK-UI-001, TASK-GAME-001
 
 ### Verification
-- [ ] Visual: History displays moves
+- [x] Visual: History displays moves
 
 ---
 
