@@ -15,7 +15,7 @@
 | **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [x] |
 | **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [x] |
 | **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [x] |
-| **3. UI Foundation** | TASK-UI-002 | Create Board Component | [ ] |
+| **3. UI Foundation** | TASK-UI-002 | Create Board Component | [x] |
 | **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [ ] |
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [ ] |
 | **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [ ] |
@@ -389,7 +389,7 @@ Define color palette and styling constants inspired by HTML mockups.
 
 ## TASK-UI-002: Create Board Component
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 2 hours
 
@@ -399,15 +399,15 @@ Create reusable 8x8 board widget with piece rendering and interaction.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/components/board_view.py`
-- [ ] Create `BoardView` class (Flet UserControl or function)
-- [ ] Render 8x8 grid with alternating colors
-- [ ] Render pieces at positions (Man and King)
-- [ ] Handle square click events
-- [ ] Highlight selected piece
-- [ ] Show valid move indicators
-- [ ] Show capture targets (red highlight)
-- [ ] Use theme colors from `ui/theme.py`
+- [x] Create `ui/components/board_view.py`
+- [x] Create `BoardView` class (Flet UserControl or function)
+- [x] Render 8x8 grid with alternating colors
+- [x] Render pieces at positions (Man and King)
+- [x] Handle square click events
+- [x] Highlight selected piece
+- [x] Show valid move indicators
+- [x] Show capture targets (red highlight)
+- [x] Use theme colors from `ui/theme.py`
 
 #### Out of Scope
 - Move execution logic (callback only)
@@ -427,22 +427,22 @@ Create reusable 8x8 board widget with piece rendering and interaction.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/components/board_view.py`
+- [x] `ui/components/board_view.py`
 
 #### Acceptance Criteria
-- [ ] Renders 8x8 board
-- [ ] Pieces display correctly
-- [ ] King pieces show crown indicator
-- [ ] Click callback fires with (row, col)
-- [ ] Selected piece highlighted
-- [ ] Valid moves shown
+- [x] Renders 8x8 board
+- [x] Pieces display correctly
+- [x] King pieces show crown indicator
+- [x] Click callback fires with (row, col)
+- [x] Selected piece highlighted
+- [x] Valid moves shown
 
 ### Dependencies
 - Requires: TASK-UI-001, TASK-GAME-001
 
 ### Verification
-- [ ] Visual: Board renders in test app
-- [ ] Click squares, verify callback
+- [x] Visual: Board renders in test app
+- [x] Click squares, verify callback
 
 ---
 
