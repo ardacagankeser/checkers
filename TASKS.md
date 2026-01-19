@@ -19,7 +19,7 @@
 | **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [x] |
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [x] |
 | **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [x] |
-| **4. Screens** | TASK-UI-006 | Implement Menu Screen | [ ] |
+| **4. Screens** | TASK-UI-006 | Implement Menu Screen | [x] |
 | **4. Screens** | TASK-UI-007 | Implement Game Screen | [ ] |
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [ ] |
 | **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [ ] |
@@ -597,7 +597,7 @@ Create component showing captured pieces for each player.
 
 ## TASK-UI-006: Implement Menu Screen
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 2.5 hours
 
@@ -607,21 +607,21 @@ Create main menu screen with game configuration options.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/menu_screen.py`
-- [ ] Title/logo display
-- [ ] Game mode selection:
+- [x] Create `ui/menu_screen.py`
+- [x] Title/logo display
+- [x] Game mode selection:
   - "Play vs AI" button
   - "Local Match" button
-- [ ] Difficulty selector (4 levels) - shown for AI mode
-- [ ] Time control selector:
+- [x] Difficulty selector (4 levels) - shown for AI mode
+- [x] Time control selector:
   - Untimed
   - 3 minutes
   - 5 minutes
   - 10 minutes
-- [ ] Side selection: White / Black / Random
-- [ ] "START MATCH" button
-- [ ] Return `GameSettings` on start
-- [ ] Styling per theme and mockup
+- [x] Side selection: White / Black / Random
+- [x] "START MATCH" button
+- [x] Return `GameSettings` on start
+- [x] Styling per theme and mockup
 
 #### Out of Scope
 - Settings persistence
@@ -640,20 +640,20 @@ Create main menu screen with game configuration options.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/menu_screen.py`
+- [x] `ui/menu_screen.py`
 
 #### Acceptance Criteria
-- [ ] All options functional
-- [ ] Returns valid GameSettings
-- [ ] Styling matches mockup intent
-- [ ] Mode toggle hides/shows difficulty
+- [x] All options functional
+- [x] Returns valid GameSettings
+- [x] Styling matches mockup intent
+- [x] Mode toggle hides/shows difficulty
 
 ### Dependencies
 - Requires: TASK-UI-001, TASK-GAME-001
 
 ### Verification
-- [ ] Visual: Menu renders correctly
-- [ ] Functional: All selections work
+- [x] Visual: Menu renders correctly
+- [x] Functional: All selections work
 
 ---
 
