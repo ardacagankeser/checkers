@@ -16,7 +16,7 @@
 | **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [x] |
 | **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [x] |
 | **3. UI Foundation** | TASK-UI-002 | Create Board Component | [x] |
-| **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [ ] |
+| **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [x] |
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [ ] |
 | **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [ ] |
 | **4. Screens** | TASK-UI-006 | Implement Menu Screen | [ ] |
@@ -448,7 +448,7 @@ Create reusable 8x8 board widget with piece rendering and interaction.
 
 ## TASK-UI-003: Create Timer Component
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 1 hour
 
@@ -458,12 +458,12 @@ Create countdown timer display component.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/components/timer.py`
-- [ ] Create `TimerDisplay` class/function
-- [ ] Display time in MM:SS format
-- [ ] Accept time value in seconds
-- [ ] Visual styling (active/inactive state)
-- [ ] Low time warning (optional color change)
+- [x] Create `ui/components/timer.py`
+- [x] Create `TimerDisplay` class/function
+- [x] Display time in MM:SS format
+- [x] Accept time value in seconds
+- [x] Visual styling (active/inactive state)
+- [x] Low time warning (optional color change)
 
 #### Out of Scope
 - Countdown logic (parent manages tick)
@@ -481,18 +481,18 @@ Create countdown timer display component.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/components/timer.py`
+- [x] `ui/components/timer.py`
 
 #### Acceptance Criteria
-- [ ] Displays formatted time
-- [ ] Styling matches theme
-- [ ] Updates when value changes
+- [x] Displays formatted time
+- [x] Styling matches theme
+- [x] Updates when value changes
 
 ### Dependencies
 - Requires: TASK-UI-001
 
 ### Verification
-- [ ] Visual: Timer displays in test
+- [x] Visual: Timer displays in test
 
 ---
 
