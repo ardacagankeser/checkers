@@ -23,7 +23,7 @@
 | **4. Screens** | TASK-UI-007 | Implement Game Screen | [x] |
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [x] |
 | **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [x] |
-| **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [ ] |
+| **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [x] |
 | **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [ ] |
 | **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [ ] |
 | **5. Integration** | TASK-FEAT-005 | Implement Timer Logic | [ ] |
@@ -827,7 +827,7 @@ Wire up main.py with screen navigation and game flow.
 
 ## TASK-FEAT-002: Connect AI to Game Loop
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 1 hour
 
@@ -837,12 +837,12 @@ Integrate AI move calculation into game screen for AI mode.
 ### Scope
 
 #### In Scope
-- [ ] Detect AI's turn in game screen
-- [ ] Show "AI Thinking..." indicator
-- [ ] Call `TurkishDraughtsAI.get_best_move()`
-- [ ] Execute AI move after delay (UX)
-- [ ] Update board and history
-- [ ] Handle AI difficulty from settings
+- [x] Detect AI's turn in game screen
+- [x] Show "AI Thinking..." indicator
+- [x] Call `TurkishDraughtsAI.get_best_move()`
+- [x] Execute AI move after delay (UX)
+- [x] Update board and history
+- [x] Handle AI difficulty from settings
 
 #### Out of Scope
 - New AI algorithms
@@ -859,19 +859,19 @@ Integrate AI move calculation into game screen for AI mode.
 ### Expected Output
 
 #### Deliverables
-- [ ] Modified `ui/game_screen.py`
+- [x] Modified `ui/game_screen.py`
 
 #### Acceptance Criteria
-- [ ] AI makes moves in AI mode
-- [ ] Indicator shows during thinking
-- [ ] Different difficulties work
+- [x] AI makes moves in AI mode
+- [x] Indicator shows during thinking
+- [x] Different difficulties work
 
 ### Dependencies
 - Requires: TASK-FEAT-001, TASK-GAME-003
 
 ### Verification
-- [ ] Play AI mode, AI responds
-- [ ] Test all difficulty levels
+- [x] Play AI mode, AI responds
+- [x] Test all difficulty levels
 
 ---
 
