@@ -22,7 +22,7 @@
 | **4. Screens** | TASK-UI-006 | Implement Menu Screen | [x] |
 | **4. Screens** | TASK-UI-007 | Implement Game Screen | [x] |
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [x] |
-| **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [ ] |
+| **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [x] |
 | **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [ ] |
 | **5. Integration** | TASK-FEAT-003 | Implement Undo Feature | [ ] |
 | **5. Integration** | TASK-FEAT-004 | Implement Forfeit Feature | [ ] |
@@ -776,7 +776,7 @@ Create game over screen with winner display and statistics.
 
 ## TASK-FEAT-001: Main App & Screen Navigation
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 1.5 hours
 
@@ -786,13 +786,13 @@ Wire up main.py with screen navigation and game flow.
 ### Scope
 
 #### In Scope
-- [ ] Implement `main.py` as Flet app
-- [ ] Initialize with Menu screen
-- [ ] Navigate Menu → Game on start
-- [ ] Navigate Game → Result on game over
-- [ ] Navigate Result → Menu on return
-- [ ] Pass settings between screens
-- [ ] Pass game stats to result screen
+- [x] Implement `main.py` as Flet app
+- [x] Initialize with Menu screen
+- [x] Navigate Menu → Game on start
+- [x] Navigate Game → Result on game over
+- [x] Navigate Result → Menu on return
+- [x] Pass settings between screens
+- [x] Pass game stats to result screen
 
 #### Out of Scope
 - AI integration (separate task)
@@ -809,19 +809,19 @@ Wire up main.py with screen navigation and game flow.
 ### Expected Output
 
 #### Deliverables
-- [ ] `main.py` (complete)
+- [x] `main.py` (complete)
 
 #### Acceptance Criteria
-- [ ] App launches to menu
-- [ ] Full navigation flow works
-- [ ] Settings passed correctly
+- [x] App launches to menu
+- [x] Full navigation flow works
+- [x] Settings passed correctly
 
 ### Dependencies
 - Requires: TASK-UI-006, TASK-UI-007, TASK-UI-008, TASK-GAME-004
 
 ### Verification
-- [ ] Run app, navigate all screens
-- [ ] Complete a 2-player game manually
+- [x] Run app, navigate all screens
+- [x] Complete a 2-player game manually
 
 ---
 
