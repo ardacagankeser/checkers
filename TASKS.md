@@ -9,7 +9,7 @@
 
 | Phase | Task ID | Title | Status |
 |-------|---------|-------|--------|
-| **1. Setup** | TASK-SETUP-001 | Project Structure & Dependencies | [ ] |
+| **1. Setup** | TASK-SETUP-001 | Project Structure & Dependencies | [x] |
 | **2. Game Logic** | TASK-GAME-001 | Create Type Definitions | [ ] |
 | **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [ ] |
 | **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [ ] |
@@ -36,7 +36,7 @@
 
 ## TASK-SETUP-001: Project Structure & Dependencies
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Critical  
 **Estimated Effort:** 30 minutes
 
@@ -46,14 +46,14 @@ Create project folder structure and install Flet dependency.
 ### Scope
 
 #### In Scope
-- [ ] Create `requirements.txt` with `flet>=0.21.0`
-- [ ] Create folder: `game/`
-- [ ] Create folder: `ui/`
-- [ ] Create folder: `ui/components/`
-- [ ] Create `game/__init__.py`
-- [ ] Create `ui/__init__.py`
-- [ ] Create `ui/components/__init__.py`
-- [ ] Create placeholder `main.py`
+- [x] Create `requirements.txt` with `flet>=0.21.0`
+- [x] Create folder: `game/`
+- [x] Create folder: `ui/`
+- [x] Create folder: `ui/components/`
+- [x] Create `game/__init__.py`
+- [x] Create `ui/__init__.py`
+- [x] Create `ui/components/__init__.py`
+- [x] Create placeholder `main.py`
 
 #### Out of Scope
 - Any game logic
@@ -71,20 +71,20 @@ Create project folder structure and install Flet dependency.
 ### Expected Output
 
 #### Deliverables
-- [ ] `requirements.txt`
-- [ ] `main.py` (placeholder with `pass`)
-- [ ] `game/__init__.py`
-- [ ] `ui/__init__.py`
-- [ ] `ui/components/__init__.py`
+- [x] `requirements.txt`
+- [x] `main.py` (placeholder with `pass`)
+- [x] `game/__init__.py`
+- [x] `ui/__init__.py`
+- [x] `ui/components/__init__.py`
 
 #### Acceptance Criteria
-- [ ] `pip install -r requirements.txt` succeeds
-- [ ] `python main.py` runs without error
-- [ ] Folder structure matches STYLEGUIDE.md
+- [x] `pip install -r requirements.txt` succeeds
+- [x] `python main.py` runs without error
+- [x] Folder structure matches STYLEGUIDE.md
 
 ### Verification
-- [ ] Run: `pip install -r requirements.txt`
-- [ ] Run: `python main.py` (exits cleanly)
+- [x] Run: `pip install -r requirements.txt`
+- [x] Run: `python main.py` (exits cleanly)
 
 ---
 
