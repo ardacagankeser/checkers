@@ -14,7 +14,7 @@
 | **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [x] |
 | **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [x] |
 | **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [x] |
-| **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [ ] |
+| **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [x] |
 | **3. UI Foundation** | TASK-UI-002 | Create Board Component | [ ] |
 | **3. UI Foundation** | TASK-UI-003 | Create Timer Component | [ ] |
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [ ] |
@@ -336,7 +336,7 @@ Create centralized game state manager for coordinating game flow.
 
 ## TASK-UI-001: Create Theme Constants
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** Medium  
 **Estimated Effort:** 30 minutes
 
@@ -346,16 +346,16 @@ Define color palette and styling constants inspired by HTML mockups.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/theme.py`
-- [ ] Define `COLORS` dictionary with:
+- [x] Create `ui/theme.py`
+- [x] Define `COLORS` dictionary with:
   - primary, primary_dark
   - bg_dark, surface, surface_light
   - text_white, text_gray
   - accent_green, accent_amber
   - board_light (maple), board_dark (walnut)
   - piece_white, piece_black
-- [ ] Define `FONTS` dictionary (optional names)
-- [ ] Define `SIZES` dictionary (board, pieces, spacing)
+- [x] Define `FONTS` dictionary (optional names)
+- [x] Define `SIZES` dictionary (board, pieces, spacing)
 
 #### Out of Scope
 - UI components
@@ -372,18 +372,18 @@ Define color palette and styling constants inspired by HTML mockups.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/theme.py`
+- [x] `ui/theme.py`
 
 #### Acceptance Criteria
-- [ ] All colors from mockups defined
-- [ ] Values are hex strings
-- [ ] No Flet imports
+- [x] All colors from mockups defined
+- [x] Values are hex strings
+- [x] No Flet imports
 
 ### Dependencies
 - Requires: TASK-SETUP-001
 
 ### Verification
-- [ ] `python -c "from ui.theme import COLORS"`
+- [x] `python -c "from ui.theme import COLORS"`
 
 ---
 
