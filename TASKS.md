@@ -11,7 +11,7 @@
 |-------|---------|-------|--------|
 | **1. Setup** | TASK-SETUP-001 | Project Structure & Dependencies | [x] |
 | **2. Game Logic** | TASK-GAME-001 | Create Type Definitions | [x] |
-| **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [ ] |
+| **2. Game Logic** | TASK-GAME-002 | Port TurkishDraughts Class | [x] |
 | **2. Game Logic** | TASK-GAME-003 | Port TurkishDraughtsAI Class | [ ] |
 | **2. Game Logic** | TASK-GAME-004 | Implement GameState Manager | [ ] |
 | **3. UI Foundation** | TASK-UI-001 | Create Theme Constants | [ ] |
@@ -149,7 +149,7 @@ Create shared type definitions, enums, and dataclasses for the game.
 
 ## TASK-GAME-002: Port TurkishDraughts Class
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 2 hours
 
@@ -159,18 +159,18 @@ Extract and refactor `TurkishDraughts` class from `dama.py`, removing all Pygame
 ### Scope
 
 #### In Scope
-- [ ] Create `game/board.py`
-- [ ] Port `TurkishDraughts` class from `dama.py`
-- [ ] Remove all Pygame imports and references
-- [ ] Remove animation-related variables and methods
-- [ ] Use types from `game/types.py`
-- [ ] Preserve all game rule logic:
+- [x] Create `game/board.py`
+- [x] Port `TurkishDraughts` class from `dama.py`
+- [x] Remove all Pygame imports and references
+- [x] Remove animation-related variables and methods
+- [x] Use types from `game/types.py`
+- [x] Preserve all game rule logic:
   - Board setup
   - Move validation
   - Capture detection (mandatory, chain)
   - Promotion logic
   - Game over detection
-- [ ] Add type hints
+- [x] Add type hints
 
 #### Out of Scope
 - AI logic (separate task)
@@ -191,23 +191,23 @@ Extract and refactor `TurkishDraughts` class from `dama.py`, removing all Pygame
 ### Expected Output
 
 #### Deliverables
-- [ ] `game/board.py`
+- [x] `game/board.py`
 
 #### Acceptance Criteria
-- [ ] Class is pure Python (no external deps)
-- [ ] All methods have type hints
-- [ ] `setup_board()` places pieces correctly
-- [ ] `get_valid_moves_for_piece()` works
-- [ ] `make_move()` executes moves properly
-- [ ] `check_game_over()` detects end conditions
-- [ ] Original `dama.py` unchanged
+- [x] Class is pure Python (no external deps)
+- [x] All methods have type hints
+- [x] `setup_board()` places pieces correctly
+- [x] `get_valid_moves_for_piece()` works
+- [x] `make_move()` executes moves properly
+- [x] `check_game_over()` detects end conditions
+- [x] Original `dama.py` unchanged
 
 ### Dependencies
 - Requires: TASK-GAME-001
 
 ### Verification
-- [ ] `python -c "from game.board import TurkishDraughts; g = TurkishDraughts()"`
-- [ ] Manual: Create board, make moves, verify rules
+- [x] `python -c "from game.board import TurkishDraughts; g = TurkishDraughts()"`
+- [x] Manual: Create board, make moves, verify rules
 
 ---
 
