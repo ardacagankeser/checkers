@@ -20,7 +20,7 @@
 | **3. UI Foundation** | TASK-UI-004 | Create Move History Component | [x] |
 | **3. UI Foundation** | TASK-UI-005 | Create Captured Pieces Component | [x] |
 | **4. Screens** | TASK-UI-006 | Implement Menu Screen | [x] |
-| **4. Screens** | TASK-UI-007 | Implement Game Screen | [ ] |
+| **4. Screens** | TASK-UI-007 | Implement Game Screen | [x] |
 | **4. Screens** | TASK-UI-008 | Implement Result Screen | [ ] |
 | **5. Integration** | TASK-FEAT-001 | Main App & Screen Navigation | [ ] |
 | **5. Integration** | TASK-FEAT-002 | Connect AI to Game Loop | [ ] |
@@ -659,7 +659,7 @@ Create main menu screen with game configuration options.
 
 ## TASK-UI-007: Implement Game Screen
 
-**Status:** [ ] Not Started  
+**Status:** [x] Complete  
 **Priority:** High  
 **Estimated Effort:** 3 hours
 
@@ -669,19 +669,19 @@ Create gameplay screen with board, timers, history, and controls.
 ### Scope
 
 #### In Scope
-- [ ] Create `ui/game_screen.py`
-- [ ] Layout:
+- [x] Create `ui/game_screen.py`
+- [x] Layout:
   - Header: Player info bars with timers
   - Center: Board component
   - Sidebar: Move history + captured pieces
   - Footer: Undo and Forfeit buttons
-- [ ] Integrate `BoardView` component
-- [ ] Integrate `TimerDisplay` components
-- [ ] Integrate `MoveHistory` component
-- [ ] Integrate `CapturedPieces` component
-- [ ] Handle piece selection and move
-- [ ] Show "AI Thinking..." indicator
-- [ ] Turn indicator (whose turn)
+- [x] Integrate `BoardView` component
+- [x] Integrate `TimerDisplay` components
+- [x] Integrate `MoveHistory` component
+- [x] Integrate `CapturedPieces` component
+- [x] Handle piece selection and move
+- [x] Show "AI Thinking..." indicator
+- [x] Turn indicator (whose turn)
 
 #### Out of Scope
 - Timer countdown interval (TASK-FEAT-005)
@@ -701,20 +701,20 @@ Create gameplay screen with board, timers, history, and controls.
 ### Expected Output
 
 #### Deliverables
-- [ ] `ui/game_screen.py`
+- [x] `ui/game_screen.py`
 
 #### Acceptance Criteria
-- [ ] Layout matches mockup structure
-- [ ] Board interactive
-- [ ] Components integrated visually
-- [ ] Placeholder button handlers
+- [x] Layout matches mockup structure
+- [x] Board interactive
+- [x] Components integrated visually
+- [x] Placeholder button handlers
 
 ### Dependencies
 - Requires: TASK-UI-002, TASK-UI-003, TASK-UI-004, TASK-UI-005, TASK-GAME-004
 
 ### Verification
-- [ ] Visual: Game screen renders
-- [ ] Click board squares, selection works
+- [x] Visual: Game screen renders
+- [x] Click board squares, selection works
 
 ---
 
